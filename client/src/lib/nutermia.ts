@@ -1,6 +1,9 @@
 /**
  * Nutermia — Shared brand, contact and asset constants.
  * Style guard: Bio-Industrial Editorial. Use Nutermia palette tokens & motion utilities defined in index.css.
+ *
+ * NOTE: Display strings for videos and nav are resolved at render time via the i18n
+ *       context using the `key` field. This file stays language-agnostic for IDs.
  */
 
 export const NUTERMIA = {
@@ -22,29 +25,16 @@ export const ASSETS = {
   labInstrument: "/manus-storage/lab-instrument_a2ee3703.jpeg",
 } as const;
 
+/** Process gallery — 4 videos for symmetric 2×2 / 4-col grid. `key` resolves to dictionary entries. */
 export const VIDEOS = [
-  {
-    id: "vJunNv3E_1I",
-    title: "Almacenamiento",
-    subtitle: "Trazabilidad y control de inventario",
-    description:
-      "Custodia de reactivos, consumibles y refacciones bajo condiciones controladas, con rotación y trazabilidad lote a lote.",
-  },
-  {
-    id: "KQjklH0EXyw",
-    title: "Empaque",
-    subtitle: "Embalaje técnico para equipos de laboratorio",
-    description:
-      "Empaque seguro de instrumentos sensibles y consumibles, garantizando integridad durante el transporte a sitio del cliente.",
-  },
-  {
-    id: "L1xHZQT3zXo",
-    title: "Servicio Técnico",
-    subtitle: "Mantenimiento y validación en sitio",
-    description:
-      "Técnicos certificados ejecutan mantenimientos preventivos, correctivos y protocolos IQ/OQ/PQ siguiendo BPM y FDA 21 CFR Part 11.",
-  },
+  { id: "vJunNv3E_1I", key: "storage" },
+  { id: "KQjklH0EXyw", key: "packing" },
+  { id: "L1xHZQT3zXo", key: "tech" },
+  { id: "ofQb525kTV4", key: "calibration" },
 ] as const;
+
+/** Long-form company tour video (full walk-through). */
+export const TOUR_VIDEO_ID = "RUYnMYmLT3o";
 
 export const BRANDS = [
   "Agilent",
@@ -57,11 +47,13 @@ export const BRANDS = [
   "Brookfield",
 ] as const;
 
+/** Routes for navigation. Labels are looked up via i18n keys. */
 export const NAV_LINKS = [
-  { href: "/", label: "Inicio" },
-  { href: "/equipos", label: "Equipos" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/productos", label: "Productos" },
-  { href: "/quienes-somos", label: "Quiénes Somos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/", labelKey: "nav.home" },
+  { href: "/equipos", labelKey: "nav.equipment" },
+  { href: "/servicios", labelKey: "nav.services" },
+  { href: "/productos", labelKey: "nav.products" },
+  { href: "/quienes-somos", labelKey: "nav.about" },
+  { href: "/tour", labelKey: "nav.tour" },
+  { href: "/contacto", labelKey: "nav.contact" },
 ] as const;

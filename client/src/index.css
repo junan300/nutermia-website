@@ -227,3 +227,91 @@
 @media (prefers-reduced-motion: reduce) {
   .nut-reveal, .nut-draw { animation: none; opacity: 1; stroke-dashoffset: 0; }
 }
+
+/* ── Atmospheric backgrounds (v2) ───────────────────────────────────────────
+   Mix light/dark sections with subtle blue+green color blooms and a faint grid.
+   Compose with .grain for added texture when desired.
+*/
+.bg-nut-mesh-light {
+  background-color: var(--color-nutermia-cream);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 12% 18%, oklch(0.78 0.08 245 / 0.22), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 88% 22%, oklch(0.85 0.07 155 / 0.22), transparent 65%),
+    radial-gradient(ellipse 70% 55% at 50% 95%, oklch(0.74 0.06 245 / 0.18), transparent 70%),
+    linear-gradient(180deg, oklch(0.985 0.005 85) 0%, oklch(0.95 0.012 85) 100%);
+}
+.bg-nut-mesh-cool {
+  background-color: oklch(0.97 0.008 220);
+  background-image:
+    radial-gradient(ellipse 50% 40% at 18% 32%, oklch(0.80 0.10 245 / 0.32), transparent 65%),
+    radial-gradient(ellipse 45% 38% at 82% 70%, oklch(0.82 0.10 155 / 0.30), transparent 65%),
+    linear-gradient(180deg, oklch(0.98 0.006 220) 0%, oklch(0.93 0.01 220) 100%);
+}
+.bg-nut-ink {
+  background-color: var(--color-nutermia-ink);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% 18%, oklch(0.42 0.105 245 / 0.50), transparent 65%),
+    radial-gradient(ellipse 55% 45% at 88% 78%, oklch(0.55 0.11 155 / 0.32), transparent 70%),
+    linear-gradient(180deg, oklch(0.20 0.025 245) 0%, oklch(0.16 0.022 245) 100%);
+}
+.bg-nut-ink-soft {
+  background-color: oklch(0.27 0.03 245);
+  background-image:
+    radial-gradient(ellipse 50% 40% at 20% 20%, oklch(0.50 0.12 245 / 0.45), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 85% 80%, oklch(0.60 0.11 155 / 0.30), transparent 70%);
+}
+.bg-nut-band-split {
+  /* Split light↔dark band for transitional sections */
+  background:
+    linear-gradient(180deg, var(--color-nutermia-cream) 0%, var(--color-nutermia-cream) 55%, var(--color-nutermia-ink) 55%, oklch(0.18 0.025 245) 100%);
+}
+
+/* Faint engineering grid overlay */
+.bg-grid-faint {
+  background-image:
+    linear-gradient(to right, oklch(0.20 0.025 245 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.20 0.025 245 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-grid-faint-on-dark {
+  background-image:
+    linear-gradient(to right, oklch(0.98 0.006 85 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.98 0.006 85 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Decorative ambient blobs (positioned absolutely inside `relative` parent) */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+.blob-blue { background: oklch(0.62 0.14 245 / 0.45); }
+.blob-green { background: oklch(0.66 0.13 155 / 0.40); }
+.blob-coral { background: oklch(0.74 0.13 35 / 0.30); }
+
+/* Lang switch pill */
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background: oklch(1 0 0 / 0.6);
+  border-radius: 999px;
+  padding: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.lang-pill button {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--color-muted-foreground);
+  transition: color 180ms var(--ease-out-snappy), background-color 180ms var(--ease-out-snappy);
+}
+.lang-pill button[data-active="true"] {
+  background: var(--color-nutermia-blue);
+  color: white;
+}

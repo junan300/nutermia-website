@@ -32,3 +32,15 @@
 - [ ] Accessibility & focus states
 - [ ] Smooth animations (under 300ms)
 - [ ] Checkpoint and deliver
+
+## v2 — Language switch + richer backgrounds
+- [ ] Create i18n context with ES + EN dictionaries and persisted lang preference
+- [ ] Add ES/EN switch in SiteHeader (desktop + mobile)
+- [ ] Refactor pages/components to use t() for all visible strings
+- [ ] Add ambient gradient blobs + grid texture to alternate sections (light/dark mix with sky-blue + mint-green accents)
+- [ ] Verify both languages render fully, then checkpoint
+
+## v3 additions
+- [ ] Add 4th process video (ofQb525kTV4) and adjust grid to 2x2/4-col symmetric
+- [ ] Add Company Tour featured block on Home using long video RUYnMYmLT3o (large cinematic player + description + CTA)
+- [ ] Add "Company Tour" link in nav
