@@ -1,35 +1,42 @@
+/**
+ * App — Routing for Nutermia website.
+ * Style guard: Bio-Industrial Editorial. All routes wrapped in PageLayout (Header + Footer).
+ */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { PageLayout } from "./components/PageLayout";
 import Home from "./pages/Home";
-
+import Equipos from "./pages/Equipos";
+import Servicios from "./pages/Servicios";
+import Productos from "./pages/Productos";
+import QuienesSomos from "./pages/QuienesSomos";
+import Contacto from "./pages/Contacto";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <PageLayout>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/equipos"} component={Equipos} />
+        <Route path={"/servicios"} component={Servicios} />
+        <Route path={"/productos"} component={Productos} />
+        <Route path={"/quienes-somos"} component={QuienesSomos} />
+        <Route path={"/contacto"} component={Contacto} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </PageLayout>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />

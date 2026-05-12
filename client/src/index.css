@@ -1,9 +1,19 @@
+/**
+ * NUTERMIA — Design System
+ * Style: "Cromatograma Vivo" (Bio-Industrial Editorial)
+ * Fonts: Instrument Serif (display) + Inter (body) + JetBrains Mono (data)
+ * Palette: Cream base (#F6F4EE), Ink (#0E1B2C), Nutermia Blue (#13497F), Nutermia Green (#2F9F6E), Coral accent (#E07A57)
+ */
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -32,85 +42,55 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-nutermia-blue: oklch(0.42 0.105 245);       /* #13497F approx */
+  --color-nutermia-blue-deep: oklch(0.32 0.10 245);
+  --color-nutermia-green: oklch(0.62 0.13 155);       /* #2F9F6E approx */
+  --color-nutermia-green-soft: oklch(0.78 0.08 155);
+  --color-nutermia-cream: oklch(0.965 0.012 85);      /* #F6F4EE approx */
+  --color-nutermia-cream-deep: oklch(0.93 0.015 85);
+  --color-nutermia-ink: oklch(0.20 0.025 245);        /* #0E1B2C approx */
+  --color-nutermia-coral: oklch(0.70 0.135 35);       /* #E07A57 approx */
+  --color-nutermia-gold: oklch(0.72 0.08 80);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --radius: 0.5rem;
+  --background: oklch(0.965 0.012 85);                /* cream */
+  --foreground: oklch(0.20 0.025 245);                /* ink */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.20 0.025 245);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.20 0.025 245);
+  --primary: oklch(0.42 0.105 245);                   /* nutermia blue */
+  --primary-foreground: oklch(0.98 0.005 85);
+  --secondary: oklch(0.93 0.015 85);
+  --secondary-foreground: oklch(0.20 0.025 245);
+  --muted: oklch(0.93 0.015 85);
+  --muted-foreground: oklch(0.45 0.03 245);
+  --accent: oklch(0.62 0.13 155);                     /* nutermia green */
+  --accent-foreground: oklch(0.98 0.005 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
+  --border: oklch(0.88 0.015 85);
+  --input: oklch(0.88 0.015 85);
+  --ring: oklch(0.62 0.13 155);
+  --chart-1: oklch(0.42 0.105 245);
+  --chart-2: oklch(0.62 0.13 155);
+  --chart-3: oklch(0.70 0.135 35);
+  --chart-4: oklch(0.32 0.10 245);
+  --chart-5: oklch(0.78 0.08 155);
+  --sidebar: oklch(0.98 0.005 85);
+  --sidebar-foreground: oklch(0.20 0.025 245);
+  --sidebar-primary: oklch(0.42 0.105 245);
+  --sidebar-primary-foreground: oklch(0.98 0.005 85);
+  --sidebar-accent: oklch(0.93 0.015 85);
+  --sidebar-accent-foreground: oklch(0.20 0.025 245);
+  --sidebar-border: oklch(0.88 0.015 85);
+  --sidebar-ring: oklch(0.62 0.13 155);
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --ease-out-snappy: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-snappy: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @layer base {
@@ -118,7 +98,9 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -131,47 +113,117 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+  .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
+  .flex { min-height: 0; min-width: 0; }
   @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+    .container { padding-left: 2rem; padding-right: 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .container { padding-left: 2.5rem; padding-right: 2.5rem; max-width: 1280px; }
   }
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+  /* Section number tab (chromatogram editorial motif) */
+  .section-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-nutermia-green);
   }
+  .section-tab::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-nutermia-green);
+    display: inline-block;
+  }
+
+  /* Hover-lift card with left green border on hover */
+  .lift-card {
+    position: relative;
+    transition: transform 240ms var(--ease-out-snappy), box-shadow 240ms var(--ease-out-snappy);
+  }
+  .lift-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-left: 2px solid transparent;
+    transition: border-color 200ms var(--ease-out-snappy);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .lift-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -16px rgba(14, 27, 44, 0.18);
+  }
+  .lift-card:hover::before {
+    border-color: var(--color-nutermia-green);
+  }
+
+  /* Animated press for buttons */
+  .btn-press:active { transform: scale(0.97); }
+
+  /* Grain overlay (subtle texture) */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+}
+
+/* Entry animation utilities */
+@keyframes nut-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.nut-reveal {
+  opacity: 0;
+  animation: nut-fade-up 600ms var(--ease-out-snappy) forwards;
+}
+.nut-delay-1 { animation-delay: 60ms; }
+.nut-delay-2 { animation-delay: 120ms; }
+.nut-delay-3 { animation-delay: 180ms; }
+.nut-delay-4 { animation-delay: 240ms; }
+.nut-delay-5 { animation-delay: 300ms; }
+
+@keyframes nut-draw {
+  from { stroke-dashoffset: 1600; }
+  to { stroke-dashoffset: 0; }
+}
+.nut-draw {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: nut-draw 1600ms var(--ease-out-snappy) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nut-reveal, .nut-draw { animation: none; opacity: 1; stroke-dashoffset: 0; }
 }
