@@ -23,7 +23,11 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5 space-y-6">
             <div className="bg-white/95 inline-flex rounded-md p-3">
-              <img src={ASSETS.logo} alt="Nutermia" className="h-12 w-auto object-contain" />
+              <img
+                src={ASSETS.logo}
+                alt="Nutermia"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed text-white/70 max-w-md">
               {s("footer.tagline")}
@@ -32,7 +36,9 @@ export function SiteFooter() {
               <span className="font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green-soft)]">
                 {s("footer.certified")}
               </span>
-              <span className="font-display text-lg leading-none">{NUTERMIA.iso}</span>
+              <span className="font-display text-lg leading-none">
+                {NUTERMIA.iso}
+              </span>
             </div>
           </div>
 
@@ -41,9 +47,12 @@ export function SiteFooter() {
               {s("footer.nav")}
             </h4>
             <ul className="space-y-2.5">
-              {NAV_LINKS.map((l) => (
+              {NAV_LINKS.map(l => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/80 hover:text-white transition-colors">
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/80 hover:text-white transition-colors"
+                  >
                     {s(l.labelKey as keyof Dict)}
                   </Link>
                 </li>
@@ -60,16 +69,26 @@ export function SiteFooter() {
                 <MapPin className="h-4 w-4 mt-0.5 text-[color:var(--color-nutermia-green-soft)] shrink-0" />
                 <span>{NUTERMIA.address}</span>
               </li>
-              {NUTERMIA.phones.map((p) => (
+              {NUTERMIA.phones.map(p => (
                 <li key={p} className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-[color:var(--color-nutermia-green-soft)] shrink-0" />
-                  <a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-white">{p}</a>
+                  <a
+                    href={`tel:${p.replace(/\s/g, "")}`}
+                    className="hover:text-white"
+                  >
+                    {p}
+                  </a>
                 </li>
               ))}
-              {NUTERMIA.emails.map((e) => (
+              {NUTERMIA.emails.map(e => (
                 <li key={e} className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-[color:var(--color-nutermia-green-soft)] shrink-0" />
-                  <a href={`mailto:${e}`} className="hover:text-white break-all">{e}</a>
+                  <a
+                    href={`mailto:${e}`}
+                    className="hover:text-white break-all"
+                  >
+                    {e}
+                  </a>
                 </li>
               ))}
               <li className="flex items-center gap-3">
@@ -85,15 +104,18 @@ export function SiteFooter() {
             {s("footer.brands")}
           </span>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {BRANDS.map((b) => (
-              <span key={b} className="text-xs text-white/70">{b}</span>
+            {BRANDS.map(b => (
+              <span key={b} className="text-xs text-white/70">
+                {b}
+              </span>
             ))}
           </div>
         </div>
 
         <div className="mt-8 flex flex-wrap justify-between gap-4 text-xs text-white/50">
           <p>
-            © {new Date().getFullYear()} {NUTERMIA.legalName}. {s("footer.rights")}
+            © {new Date().getFullYear()} {NUTERMIA.legalName}.{" "}
+            {s("footer.rights")}
           </p>
           <p className="font-mono">Bogotá D.C. · Colombia</p>
         </div>

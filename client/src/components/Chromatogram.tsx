@@ -11,7 +11,11 @@ interface ChromatogramProps {
   variant?: "divider" | "hero";
 }
 
-export function Chromatogram({ className, animate = true, variant = "divider" }: ChromatogramProps) {
+export function Chromatogram({
+  className,
+  animate = true,
+  variant = "divider",
+}: ChromatogramProps) {
   // A smooth path that simulates an HPLC chromatogram (a few peaks of different heights)
   const path =
     variant === "hero"

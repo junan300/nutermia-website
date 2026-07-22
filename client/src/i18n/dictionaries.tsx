@@ -40,8 +40,15 @@ const es = {
   "home.hero.tab": "01 · Nutermia S.A.S.",
   "home.hero.title": (
     <>
-      La <em className="italic text-[color:var(--color-nutermia-blue)]">excelencia</em> es un{" "}
-      <em className="italic text-[color:var(--color-nutermia-green)]">estilo de vida</em>,
+      La{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        excelencia
+      </em>{" "}
+      es un{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        estilo de vida
+      </em>
+      ,
       <br className="hidden sm:block" /> no una coincidencia.
     </>
   ) as ReactNode,
@@ -77,8 +84,9 @@ const es = {
   "home.hplc.tab": "02 · Especialidad",
   "home.hplc.title": (
     <>
-      Sistemas <em className="italic text-[color:var(--color-nutermia-blue)]">HPLC</em> de alto
-      rendimiento para laboratorios analíticos y de control de calidad.
+      Sistemas{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">HPLC</em>{" "}
+      de alto rendimiento para laboratorios analíticos y de control de calidad.
     </>
   ) as ReactNode,
   "home.hplc.body":
@@ -92,14 +100,18 @@ const es = {
   "home.hplc.viewEquip": "Ver equipos",
   "home.hplc.tag.modular": "HPLC · MODULAR",
   "home.hplc.tag.precision": "PRECISIÓN",
-  "home.hplc.tag.precision.note": "Reproducibilidad de tiempos de retención típica.",
+  "home.hplc.tag.precision.note":
+    "Reproducibilidad de tiempos de retención típica.",
 
   // ── Home · Services ─────────────────────────────────────────────────────────
   "home.serv.tab": "03 · Servicios técnicos",
   "home.serv.title": (
     <>
       Soporte experto, validación rigurosa y cumplimiento{" "}
-      <em className="italic text-[color:var(--color-nutermia-green-soft)]">regulatorio</em>.
+      <em className="italic text-[color:var(--color-nutermia-green-soft)]">
+        regulatorio
+      </em>
+      .
     </>
   ) as ReactNode,
   "home.serv.body":
@@ -128,8 +140,15 @@ const es = {
   "home.video.tab": "04 · Nuestros procesos",
   "home.video.title": (
     <>
-      Operación trazable, del <em className="italic text-[color:var(--color-nutermia-green)]">almacén</em> al{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">laboratorio</em>.
+      Operación trazable, del{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        almacén
+      </em>{" "}
+      al{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        laboratorio
+      </em>
+      .
     </>
   ) as ReactNode,
   "home.video.body":
@@ -157,7 +176,11 @@ const es = {
   "home.tour.eyebrow": "Recorrido Completo",
   "home.tour.title": (
     <>
-      Conozca a <em className="italic text-[color:var(--color-nutermia-green)]">Nutermia</em> desde adentro.
+      Conozca a{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        Nutermia
+      </em>{" "}
+      desde adentro.
     </>
   ) as ReactNode,
   "home.tour.body":
@@ -179,7 +202,8 @@ const es = {
 
   // ── Home · CTA ──────────────────────────────────────────────────────────────
   "home.cta.badge": "CERTIFICACIÓN ISO 9001:2015",
-  "home.cta.title": "¿Listo para una cotización técnica a la medida de su laboratorio?",
+  "home.cta.title":
+    "¿Listo para una cotización técnica a la medida de su laboratorio?",
   "home.cta.body":
     "Cuéntenos su necesidad y un especialista le contactará en menos de 24 horas hábiles con una propuesta técnica y comercial.",
   "home.cta.primary": "Solicitar cotización",
@@ -194,8 +218,14 @@ const es = {
   "eq.title": (
     <>
       Instrumentación analítica para{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">control de calidad</em> y{" "}
-      <em className="italic text-[color:var(--color-nutermia-green)]">desarrollo</em> farmacéutico.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        control de calidad
+      </em>{" "}
+      y{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        desarrollo
+      </em>{" "}
+      farmacéutico.
     </>
   ) as ReactNode,
   "eq.body":
@@ -249,7 +279,9 @@ const es = {
   "sv.title": (
     <>
       Mantenimiento, validación y{" "}
-      <em className="italic text-[color:var(--color-nutermia-green-soft)]">cumplimiento</em>{" "}
+      <em className="italic text-[color:var(--color-nutermia-green-soft)]">
+        cumplimiento
+      </em>{" "}
       regulatorio para laboratorios.
     </>
   ) as ReactNode,
@@ -309,7 +341,8 @@ const es = {
   "sv.compl.body":
     "Nuestros protocolos están alineados con FDA 21 CFR Part 11, GMP/BPM colombiana, USP <1058> y guías ICH Q2(R1) / ICH Q9, lo que asegura integridad de datos y defensibilidad ante auditorías.",
   "sv.cta.title": "¿Necesita un protocolo IQ/OQ/PQ o un contrato anual?",
-  "sv.cta.body": "Solicite una propuesta técnica personalizada para su laboratorio.",
+  "sv.cta.body":
+    "Solicite una propuesta técnica personalizada para su laboratorio.",
   "sv.cta.btn": "Cotizar servicios",
 
   // ── Productos page ──────────────────────────────────────────────────────────
@@ -317,7 +350,10 @@ const es = {
   "pr.title": (
     <>
       Cromatografía, espectroscopía y consumibles para el{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">laboratorio moderno</em>.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        laboratorio moderno
+      </em>
+      .
     </>
   ) as ReactNode,
   "pr.g1.t": "Cromatografía Líquida",
@@ -372,7 +408,8 @@ const es = {
   "pr.category": "CATEGORÍA",
   "pr.available": "DISPONIBLE",
   "pr.cta.title": "¿Necesita un portafolio específico para su laboratorio?",
-  "pr.cta.body": "Compartimos catálogos detallados y fichas técnicas a solicitud.",
+  "pr.cta.body":
+    "Compartimos catálogos detallados y fichas técnicas a solicitud.",
   "pr.cta.btn": "Solicitar catálogo",
 
   // ── Quiénes Somos page ──────────────────────────────────────────────────────
@@ -380,15 +417,17 @@ const es = {
   "ab.title": (
     <>
       Una compañía colombiana de{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">soluciones</em> integrales para
-      el laboratorio analítico.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        soluciones
+      </em>{" "}
+      integrales para el laboratorio analítico.
     </>
   ) as ReactNode,
   "ab.body":
     "Nutermia S.A.S. acompaña a laboratorios farmacéuticos, analíticos y de control de calidad con equipos, consumibles, servicio técnico y validación regulatoria — desde Bogotá D.C. hacia toda Colombia.",
   "ab.m.tab": "Manifiesto",
   "ab.m.title": "Excelencia, no coincidencia.",
-  "ab.m.quote": "\"La excelencia es un estilo de vida, no una coincidencia.\"",
+  "ab.m.quote": '"La excelencia es un estilo de vida, no una coincidencia."',
   "ab.m.p1":
     "Creemos que la calidad analítica se construye en cada gesto: en el almacenamiento trazable de un reactivo, en el empaque cuidadoso de un instrumento, en la firma de un técnico sobre un protocolo de validación. Por eso documentamos, calibramos y certificamos cada proceso bajo ISO 9001:2015.",
   "ab.m.p2":
@@ -408,7 +447,11 @@ const es = {
   "tour.eyebrow": "Tour Virtual · Recorrido completo",
   "tour.title": (
     <>
-      Conozca a <em className="italic text-[color:var(--color-nutermia-green)]">Nutermia</em> sin moverse del laboratorio.
+      Conozca a{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        Nutermia
+      </em>{" "}
+      sin moverse del laboratorio.
     </>
   ) as ReactNode,
   "tour.body":
@@ -425,7 +468,11 @@ const es = {
   "ct.eyebrow": "Contacto",
   "ct.title": (
     <>
-      Hablemos de su <em className="italic text-[color:var(--color-nutermia-blue)]">laboratorio</em>.
+      Hablemos de su{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        laboratorio
+      </em>
+      .
     </>
   ) as ReactNode,
   "ct.body":
@@ -440,7 +487,8 @@ const es = {
   "ct.f.phone.ph": "+57 300 000 0000",
   "ct.f.subject": "Asunto",
   "ct.f.message": "Mensaje",
-  "ct.f.message.ph": "Cuéntenos sobre el equipo, servicio o consumible que necesita...",
+  "ct.f.message.ph":
+    "Cuéntenos sobre el equipo, servicio o consumible que necesita...",
   "ct.f.privacy":
     "Al enviar, sus datos serán utilizados únicamente para responder a su solicitud comercial.",
   "ct.f.submit": "Enviar solicitud",
@@ -455,7 +503,8 @@ const es = {
   "ct.cert.tab": "CERTIFICACIÓN",
   "ct.cert.body":
     "Sistema de Gestión de la Calidad certificado. Operación bajo BPM y FDA 21 CFR Part 11 para servicios de validación.",
-  "ct.toast.success": "Se abrió su cliente de correo con la solicitud lista para enviar.",
+  "ct.toast.success":
+    "Se abrió su cliente de correo con la solicitud lista para enviar.",
   "ct.toast.desc": "También puede escribirnos directamente a",
 } as const satisfies Record<string, Value>;
 
@@ -486,8 +535,14 @@ const en = {
   "home.hero.tab": "01 · Nutermia S.A.S.",
   "home.hero.title": (
     <>
-      <em className="italic text-[color:var(--color-nutermia-blue)]">Excellence</em> is a{" "}
-      <em className="italic text-[color:var(--color-nutermia-green)]">way of life</em>,
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        Excellence
+      </em>{" "}
+      is a{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        way of life
+      </em>
+      ,
       <br className="hidden sm:block" /> not a coincidence.
     </>
   ) as ReactNode,
@@ -523,7 +578,8 @@ const en = {
   "home.hplc.tab": "02 · Specialty",
   "home.hplc.title": (
     <>
-      High-performance <em className="italic text-[color:var(--color-nutermia-blue)]">HPLC</em>{" "}
+      High-performance{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">HPLC</em>{" "}
       systems for analytical and QC laboratories.
     </>
   ) as ReactNode,
@@ -545,7 +601,9 @@ const en = {
   "home.serv.title": (
     <>
       Expert support, rigorous validation, and{" "}
-      <em className="italic text-[color:var(--color-nutermia-green-soft)]">regulatory</em>{" "}
+      <em className="italic text-[color:var(--color-nutermia-green-soft)]">
+        regulatory
+      </em>{" "}
       compliance.
     </>
   ) as ReactNode,
@@ -576,8 +634,14 @@ const en = {
   "home.video.title": (
     <>
       Traceable operations, from the{" "}
-      <em className="italic text-[color:var(--color-nutermia-green)]">warehouse</em> to the{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">laboratory</em>.
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        warehouse
+      </em>{" "}
+      to the{" "}
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        laboratory
+      </em>
+      .
     </>
   ) as ReactNode,
   "home.video.body":
@@ -605,7 +669,11 @@ const en = {
   "home.tour.eyebrow": "Full Walk-through",
   "home.tour.title": (
     <>
-      Meet <em className="italic text-[color:var(--color-nutermia-green)]">Nutermia</em> from the inside.
+      Meet{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        Nutermia
+      </em>{" "}
+      from the inside.
     </>
   ) as ReactNode,
   "home.tour.body":
@@ -642,8 +710,14 @@ const en = {
   "eq.title": (
     <>
       Analytical instrumentation for{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">quality control</em> and{" "}
-      <em className="italic text-[color:var(--color-nutermia-green)]">pharmaceutical development</em>.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        quality control
+      </em>{" "}
+      and{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        pharmaceutical development
+      </em>
+      .
     </>
   ) as ReactNode,
   "eq.body":
@@ -697,8 +771,10 @@ const en = {
   "sv.title": (
     <>
       Maintenance, validation, and regulatory{" "}
-      <em className="italic text-[color:var(--color-nutermia-green-soft)]">compliance</em> for
-      laboratories.
+      <em className="italic text-[color:var(--color-nutermia-green-soft)]">
+        compliance
+      </em>{" "}
+      for laboratories.
     </>
   ) as ReactNode,
   "sv.body":
@@ -765,7 +841,10 @@ const en = {
   "pr.title": (
     <>
       Chromatography, spectroscopy, and consumables for the{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">modern laboratory</em>.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        modern laboratory
+      </em>
+      .
     </>
   ) as ReactNode,
   "pr.g1.t": "Liquid Chromatography",
@@ -828,15 +907,17 @@ const en = {
   "ab.title": (
     <>
       A Colombian company delivering integrated{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">solutions</em> for the
-      analytical laboratory.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        solutions
+      </em>{" "}
+      for the analytical laboratory.
     </>
   ) as ReactNode,
   "ab.body":
     "Nutermia S.A.S. supports pharmaceutical, analytical, and QC laboratories with equipment, consumables, technical service, and regulatory validation — from Bogotá D.C. across Colombia.",
   "ab.m.tab": "Manifesto",
   "ab.m.title": "Excellence, not coincidence.",
-  "ab.m.quote": "\"Excellence is a way of life, not a coincidence.\"",
+  "ab.m.quote": '"Excellence is a way of life, not a coincidence."',
   "ab.m.p1":
     "We believe analytical quality is built in every gesture: in the traceable storage of a reagent, in the careful packaging of an instrument, in a technician's signature on a validation protocol. That's why we document, calibrate, and certify each process under ISO 9001:2015.",
   "ab.m.p2":
@@ -856,7 +937,11 @@ const en = {
   "tour.eyebrow": "Virtual Tour · Full walk-through",
   "tour.title": (
     <>
-      Meet <em className="italic text-[color:var(--color-nutermia-green)]">Nutermia</em> without leaving the lab.
+      Meet{" "}
+      <em className="italic text-[color:var(--color-nutermia-green)]">
+        Nutermia
+      </em>{" "}
+      without leaving the lab.
     </>
   ) as ReactNode,
   "tour.body":
@@ -874,7 +959,10 @@ const en = {
   "ct.title": (
     <>
       Let's talk about your{" "}
-      <em className="italic text-[color:var(--color-nutermia-blue)]">laboratory</em>.
+      <em className="italic text-[color:var(--color-nutermia-blue)]">
+        laboratory
+      </em>
+      .
     </>
   ) as ReactNode,
   "ct.body":
@@ -889,7 +977,8 @@ const en = {
   "ct.f.phone.ph": "+57 300 000 0000",
   "ct.f.subject": "Subject",
   "ct.f.message": "Message",
-  "ct.f.message.ph": "Tell us about the equipment, service, or consumable you need...",
+  "ct.f.message.ph":
+    "Tell us about the equipment, service, or consumable you need...",
   "ct.f.privacy":
     "By submitting, your data will only be used to respond to your commercial request.",
   "ct.f.submit": "Send request",
@@ -904,7 +993,8 @@ const en = {
   "ct.cert.tab": "CERTIFICATION",
   "ct.cert.body":
     "Certified Quality Management System. Operations under GMP and FDA 21 CFR Part 11 for validation services.",
-  "ct.toast.success": "Your email client opened with the request ready to send.",
+  "ct.toast.success":
+    "Your email client opened with the request ready to send.",
   "ct.toast.desc": "You can also email us directly at",
 } as const satisfies Record<keyof typeof es, Value>;
 
