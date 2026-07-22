@@ -22,7 +22,13 @@ import {
 } from "lucide-react";
 import { Chromatogram } from "@/components/Chromatogram";
 import { VideoCard } from "@/components/VideoCard";
-import { ASSETS, BRANDS, NUTERMIA, TOUR_VIDEO_ID, VIDEOS } from "@/lib/nutermia";
+import {
+  ASSETS,
+  BRANDS,
+  NUTERMIA,
+  TOUR_VIDEO_ID,
+  VIDEOS,
+} from "@/lib/nutermia";
 import { useI18n } from "@/contexts/I18nContext";
 import type { Dict } from "@/i18n/dictionaries";
 
@@ -31,7 +37,7 @@ const SERVICE_ICONS = [Wrench, Activity, ShieldCheck, Gauge, Cpu, FlaskConical];
 export default function Home() {
   const { t, s } = useI18n();
 
-  const services = [1, 2, 3, 4, 5, 6].map((i) => ({
+  const services = [1, 2, 3, 4, 5, 6].map(i => ({
     Icon: SERVICE_ICONS[i - 1],
     title: s(`home.serv.s${i}.t` as keyof Dict),
     desc: s(`home.serv.s${i}.d` as keyof Dict),
@@ -51,7 +57,9 @@ export default function Home() {
         <div className="container relative pt-16 pb-28 lg:pt-24 lg:pb-40">
           <div className="grid lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-7 space-y-7">
-              <span className="section-tab nut-reveal">{s("home.hero.tab")}</span>
+              <span className="section-tab nut-reveal">
+                {s("home.hero.tab")}
+              </span>
               <h1 className="font-display text-[40px] leading-[1.05] sm:text-6xl lg:text-[78px] text-foreground nut-reveal nut-delay-1">
                 {t("home.hero.title")}
               </h1>
@@ -85,7 +93,7 @@ export default function Home() {
                   <ShieldCheck className="h-4 w-4 text-[color:var(--color-nutermia-green)]" />
                 </div>
                 <dl className="divide-y divide-border">
-                  {[1, 2, 3, 4, 5].map((i) => (
+                  {[1, 2, 3, 4, 5].map(i => (
                     <div
                       key={i}
                       className="flex items-baseline justify-between py-3 gap-4"
@@ -100,7 +108,7 @@ export default function Home() {
                   ))}
                 </dl>
                 <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-                  {[1, 2, 3].map((i) => (
+                  {[1, 2, 3].map(i => (
                     <div
                       key={i}
                       className="rounded-md bg-[color:var(--color-nutermia-cream)] py-3"
@@ -144,18 +152,17 @@ export default function Home() {
         <div className="blob blob-green h-80 w-80 bottom-0 right-0" />
 
         <div className="container relative py-24 lg:py-32 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-6 nut-reveal">
             <span className="section-tab">{s("home.hplc.tab")}</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
               {t("home.hplc.title")}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">{s("home.hplc.body")}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {s("home.hplc.body")}
+            </p>
             <ul className="grid sm:grid-cols-2 gap-3">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2.5 text-sm"
-                >
+              {[1, 2, 3, 4, 5, 6].map(i => (
+                <li key={i} className="flex items-start gap-2.5 text-sm">
                   <CircleCheck className="h-4 w-4 mt-0.5 text-[color:var(--color-nutermia-green)] shrink-0" />
                   <span className="text-foreground/85">
                     {s(`home.hplc.f${i}` as keyof Dict)}
@@ -174,7 +181,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative nut-reveal nut-delay-2">
             <div className="grid grid-cols-5 gap-4">
               <div className="col-span-3 relative rounded-xl overflow-hidden bg-white border border-border aspect-[3/4]">
                 <img
@@ -221,7 +228,7 @@ export default function Home() {
 
         <div className="container relative py-24 lg:py-32">
           <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 nut-reveal">
               <span
                 className="section-tab"
                 style={{ color: "var(--color-nutermia-green-soft)" }}
@@ -232,7 +239,7 @@ export default function Home() {
                 {t("home.serv.title")}
               </h2>
             </div>
-            <p className="lg:col-span-5 text-white/70 leading-relaxed">
+            <p className="lg:col-span-5 text-white/70 leading-relaxed nut-reveal nut-delay-2">
               {s("home.serv.body")}
             </p>
           </div>
@@ -244,8 +251,12 @@ export default function Home() {
                 className={`lift-card group rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur p-6 nut-reveal nut-delay-${(i % 5) + 1}`}
               >
                 <sv.Icon className="h-6 w-6 text-[color:var(--color-nutermia-green-soft)]" />
-                <h3 className="mt-4 font-display text-xl leading-tight">{sv.title}</h3>
-                <p className="mt-2 text-sm text-white/65 leading-relaxed">{sv.desc}</p>
+                <h3 className="mt-4 font-display text-xl leading-tight">
+                  {sv.title}
+                </h3>
+                <p className="mt-2 text-sm text-white/65 leading-relaxed">
+                  {sv.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -270,13 +281,13 @@ export default function Home() {
 
         <div className="container relative py-24 lg:py-32">
           <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 nut-reveal">
               <span className="section-tab">{s("home.video.tab")}</span>
               <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
                 {t("home.video.title")}
               </h2>
             </div>
-            <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
+            <p className="lg:col-span-5 text-muted-foreground leading-relaxed nut-reveal nut-delay-2">
               {s("home.video.body")}
             </p>
           </div>
@@ -302,7 +313,7 @@ export default function Home() {
 
         <div className="container relative py-24 lg:py-32">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-6 nut-reveal">
               <span className="section-tab">{s("home.tour.tab")}</span>
               <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-nutermia-green)]/40 bg-white/70 backdrop-blur px-3 py-1.5 font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green)]">
                 <PlayCircle className="h-3.5 w-3.5" />
@@ -311,7 +322,9 @@ export default function Home() {
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
                 {t("home.tour.title")}
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{s("home.tour.body")}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {s("home.tour.body")}
+              </p>
 
               <ul className="space-y-3 pt-2">
                 <li className="flex items-center gap-3 text-sm">
@@ -319,21 +332,27 @@ export default function Home() {
                   <span className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase w-24">
                     {s("home.tour.meta.duration")}
                   </span>
-                  <span className="text-foreground/85">{s("home.tour.meta.duration.v")}</span>
+                  <span className="text-foreground/85">
+                    {s("home.tour.meta.duration.v")}
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 text-sm">
                   <MapPin className="h-4 w-4 text-[color:var(--color-nutermia-green)]" />
                   <span className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase w-24">
                     {s("home.tour.meta.location")}
                   </span>
-                  <span className="text-foreground/85">{s("home.tour.meta.location.v")}</span>
+                  <span className="text-foreground/85">
+                    {s("home.tour.meta.location.v")}
+                  </span>
                 </li>
                 <li className="flex items-center gap-3 text-sm">
                   <Languages className="h-4 w-4 text-[color:var(--color-nutermia-green)]" />
                   <span className="font-mono text-[11px] tracking-widest text-muted-foreground uppercase w-24">
                     {s("home.tour.meta.lang")}
                   </span>
-                  <span className="text-foreground/85">{s("home.tour.meta.lang.v")}</span>
+                  <span className="text-foreground/85">
+                    {s("home.tour.meta.lang.v")}
+                  </span>
                 </li>
               </ul>
 
@@ -374,7 +393,7 @@ export default function Home() {
       {/* ============== BRANDS ============== */}
       <section className="bg-[color:var(--color-nutermia-cream-deep)] border-y border-border">
         <div className="container py-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 nut-reveal">
             <div>
               <span className="section-tab">{s("home.brands.tab")}</span>
               <h3 className="mt-3 font-display text-3xl md:text-4xl leading-tight">
@@ -386,12 +405,14 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {BRANDS.map((b) => (
+            {BRANDS.map((b, i) => (
               <li
                 key={b}
-                className="lift-card flex items-center justify-center rounded-md border border-border bg-white py-5 px-3 text-center"
+                className={`lift-card flex items-center justify-center rounded-md border border-border bg-white py-5 px-3 text-center nut-reveal nut-delay-${(i % 4) + 1}`}
               >
-                <span className="font-display text-lg text-foreground">{b}</span>
+                <span className="font-display text-lg text-foreground">
+                  {b}
+                </span>
               </li>
             ))}
           </ul>
@@ -404,7 +425,7 @@ export default function Home() {
         <div className="blob blob-green h-80 w-80 bottom-0 -right-20 opacity-50" />
 
         <div className="container relative py-24 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-10 items-center rounded-2xl border border-border bg-card/95 backdrop-blur p-8 lg:p-14 shadow-[0_30px_60px_-40px_rgba(14,27,44,0.25)]">
+          <div className="grid lg:grid-cols-12 gap-10 items-center rounded-2xl border border-border bg-card/95 backdrop-blur p-8 lg:p-14 shadow-[0_30px_60px_-40px_rgba(14,27,44,0.25)] nut-reveal">
             <div className="lg:col-span-7 space-y-5">
               <div className="inline-flex items-center gap-3 rounded-full border border-[color:var(--color-nutermia-green)]/30 bg-[color:var(--color-nutermia-green)]/8 px-4 py-1.5">
                 <Microscope className="h-4 w-4 text-[color:var(--color-nutermia-green)]" />
@@ -415,7 +436,9 @@ export default function Home() {
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
                 {s("home.cta.title")}
               </h2>
-              <p className="text-muted-foreground max-w-xl">{s("home.cta.body")}</p>
+              <p className="text-muted-foreground max-w-xl">
+                {s("home.cta.body")}
+              </p>
               <div className="flex flex-wrap gap-3 pt-1">
                 <Link
                   href="/contacto"
@@ -438,7 +461,7 @@ export default function Home() {
                   {s("home.cta.panel.title")}
                 </span>
                 <ul className="space-y-3 text-sm">
-                  {NUTERMIA.phones.map((p) => (
+                  {NUTERMIA.phones.map(p => (
                     <li
                       key={p}
                       className="flex items-center justify-between border-b border-white/10 pb-3"
@@ -454,7 +477,7 @@ export default function Home() {
                       </a>
                     </li>
                   ))}
-                  {NUTERMIA.emails.map((e) => (
+                  {NUTERMIA.emails.map(e => (
                     <li
                       key={e}
                       className="flex items-center justify-between border-b border-white/10 pb-3"
@@ -474,7 +497,9 @@ export default function Home() {
                     <span className="text-white/60 font-mono text-[11px] tracking-widest shrink-0">
                       {s("home.cta.panel.addr")}
                     </span>
-                    <span className="text-right text-white/90">{NUTERMIA.address}</span>
+                    <span className="text-right text-white/90">
+                      {NUTERMIA.address}
+                    </span>
                   </li>
                 </ul>
               </div>

@@ -53,12 +53,14 @@ export default function Equipos() {
           <Chromatogram variant="divider" animate={false} />
         </div>
         <div className="container relative pt-16 pb-24 lg:pt-24 lg:pb-32">
-          <span className="section-tab">{s("eq.eyebrow")}</span>
+          <span className="section-tab nut-reveal">{s("eq.eyebrow")}</span>
           <div className="mt-5 grid lg:grid-cols-12 gap-10 items-end">
-            <h1 className="lg:col-span-8 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04]">
+            <h1 className="lg:col-span-8 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] nut-reveal nut-delay-1">
               {t("eq.title")}
             </h1>
-            <p className="lg:col-span-4 text-muted-foreground leading-relaxed">{s("eq.body")}</p>
+            <p className="lg:col-span-4 text-muted-foreground leading-relaxed nut-reveal nut-delay-2">
+              {s("eq.body")}
+            </p>
           </div>
         </div>
       </section>
@@ -69,7 +71,7 @@ export default function Equipos() {
         <div className="blob blob-green h-72 w-72 -top-10 -right-20 opacity-60" />
 
         <div className="container relative py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-7 grid grid-cols-5 gap-4">
+          <div className="lg:col-span-7 grid grid-cols-5 gap-4 nut-reveal">
             <div className="col-span-3 rounded-xl overflow-hidden border border-border aspect-[3/4] bg-white">
               <img
                 src={ASSETS.hplcStack}
@@ -93,19 +95,23 @@ export default function Equipos() {
                   <h3 className="font-display text-2xl text-[color:var(--color-nutermia-blue)] leading-tight">
                     {s("eq.feature.modelName")}
                   </h3>
-                  <p className="mt-2 text-xs text-muted-foreground">{s("eq.feature.modelDesc")}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    {s("eq.feature.modelDesc")}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="lg:col-span-5 space-y-5">
+          <div className="lg:col-span-5 space-y-5 nut-reveal nut-delay-2">
             <span className="section-tab">{s("eq.feature.tab")}</span>
             <h2 className="font-display text-3xl md:text-4xl leading-tight">
               {s("eq.feature.title")}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">{s("eq.feature.body")}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {s("eq.feature.body")}
+            </p>
             <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-foreground/85">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
+              {[1, 2, 3, 4, 5, 6].map(i => (
                 <li key={i} className="font-mono text-[12px]">
                   › {s(`home.hplc.f${i}` as keyof Dict)}
                 </li>
@@ -129,30 +135,39 @@ export default function Equipos() {
         <div className="blob blob-green h-96 w-96 bottom-0 -right-32 opacity-55" />
 
         <div className="container relative py-20 lg:py-28">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 nut-reveal">
             <div>
-              <span className="section-tab" style={{ color: "var(--color-nutermia-green-soft)" }}>
+              <span
+                className="section-tab"
+                style={{ color: "var(--color-nutermia-green-soft)" }}
+              >
                 {s("eq.cats.tab")}
               </span>
               <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
                 {s("eq.cats.title")}
               </h2>
             </div>
-            <p className="md:max-w-md text-sm text-white/70">{s("eq.cats.body")}</p>
+            <p className="md:max-w-md text-sm text-white/70">
+              {s("eq.cats.body")}
+            </p>
           </div>
 
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CATEGORIES.map(({ Icon, k }) => (
+            {CATEGORIES.map(({ Icon, k }, i) => (
               <li
                 key={k}
-                className="lift-card group flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur p-5"
+                className={`lift-card group flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur p-5 nut-reveal nut-delay-${(i % 3) + 1}`}
               >
                 <div className="rounded-md bg-[color:var(--color-nutermia-green-soft)]/15 p-2.5">
                   <Icon className="h-5 w-5 text-[color:var(--color-nutermia-green-soft)]" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl leading-tight">{s(`eq.cat.${k}` as keyof Dict)}</h3>
-                  <p className="mt-1 text-sm text-white/65">{s(`eq.cat.${k}.d` as keyof Dict)}</p>
+                  <h3 className="font-display text-xl leading-tight">
+                    {s(`eq.cat.${k}` as keyof Dict)}
+                  </h3>
+                  <p className="mt-1 text-sm text-white/65">
+                    {s(`eq.cat.${k}.d` as keyof Dict)}
+                  </p>
                 </div>
               </li>
             ))}
@@ -164,8 +179,10 @@ export default function Equipos() {
       <section className="bg-nut-mesh-light relative overflow-hidden">
         <div className="blob blob-blue h-72 w-72 top-0 -left-20 opacity-45" />
         <div className="blob blob-green h-72 w-72 bottom-0 -right-20 opacity-45" />
-        <div className="container relative py-20 text-center max-w-2xl">
-          <h2 className="font-display text-3xl md:text-4xl leading-tight">{s("eq.cta.title")}</h2>
+        <div className="container relative py-20 text-center max-w-2xl nut-reveal">
+          <h2 className="font-display text-3xl md:text-4xl leading-tight">
+            {s("eq.cta.title")}
+          </h2>
           <p className="mt-3 text-muted-foreground">
             {s("eq.cta.body").replace("Nutermia", NUTERMIA.legalName)}
           </p>

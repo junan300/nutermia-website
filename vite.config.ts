@@ -6,8 +6,8 @@ import { defineConfig } from "vite";
 const plugins = [react(), tailwindcss()];
 
 export default defineConfig({
-  // Project site URL: https://junan300.github.io/nutermia-website/
-  base: "/nutermia-website/",
+  // Deployed at the domain root on Hostinger (e.g. https://nutermia.com.co/).
+  base: "/",
   plugins,
   resolve: {
     alias: {

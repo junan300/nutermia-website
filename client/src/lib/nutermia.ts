@@ -19,7 +19,7 @@ export const NUTERMIA = {
   yearsOfService: 15,
 } as const;
 
-/** Public image paths (respect Vite `base` for GitHub Pages project sites). */
+/** Public image paths (respect Vite `base` so assets resolve wherever the site is hosted). */
 const asset = (file: string) => `${import.meta.env.BASE_URL}images/${file}`;
 
 export const ASSETS = {
