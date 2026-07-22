@@ -20,9 +20,9 @@ export const NUTERMIA = {
 } as const;
 
 export const ASSETS = {
-  logo: "/manus-storage/nutermia-logo_a510d83f.webp",
-  hplcStack: "/manus-storage/agilent-hplc-stack_3dea8d96.jpeg",
-  labInstrument: "/manus-storage/lab-instrument_a2ee3703.jpeg",
+  logo: "/images/nutermia-logo.webp",
+  hplcStack: "/images/agilent-hplc-stack.jpeg",
+  labInstrument: "/images/lab-instrument.jpeg",
 } as const;
 
 /** Process gallery — 4 videos for symmetric 2×2 / 4-col grid. `key` resolves to dictionary entries. */
