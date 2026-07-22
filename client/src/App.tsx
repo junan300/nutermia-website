@@ -6,7 +6,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { I18nProvider } from "./contexts/I18nContext";
@@ -19,7 +19,10 @@ import QuienesSomos from "./pages/QuienesSomos";
 import Contacto from "./pages/Contacto";
 import Tour from "./pages/Tour";
 
-function Router() {
+/** Strip trailing slash from Vite base so wouter matches `/nutermia-website/...`. */
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+function AppRouter() {
   return (
     <PageLayout>
       <Switch>
@@ -44,7 +47,9 @@ function App() {
         <I18nProvider>
           <TooltipProvider>
             <Toaster />
-            <Router />
+            <Router base={routerBase}>
+              <AppRouter />
+            </Router>
           </TooltipProvider>
         </I18nProvider>
       </ThemeProvider>
