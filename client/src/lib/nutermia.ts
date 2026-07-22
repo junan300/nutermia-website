@@ -19,10 +19,13 @@ export const NUTERMIA = {
   yearsOfService: 15,
 } as const;
 
+/** Public image paths (respect Vite `base` for GitHub Pages project sites). */
+const asset = (file: string) => `${import.meta.env.BASE_URL}images/${file}`;
+
 export const ASSETS = {
-  logo: "/images/nutermia-logo.webp",
-  hplcStack: "/images/agilent-hplc-stack.jpeg",
-  labInstrument: "/images/lab-instrument.jpeg",
+  logo: asset("logo-nutermia.webp"),
+  hplcStack: asset("HPLC-AGILENT.jpeg"),
+  labInstrument: asset("LAB-EQUIPMENT.jpeg"),
 } as const;
 
 /** Process gallery — 4 videos for symmetric 2×2 / 4-col grid. `key` resolves to dictionary entries. */

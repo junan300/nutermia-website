@@ -6,6 +6,8 @@ import { defineConfig } from "vite";
 const plugins = [react(), tailwindcss()];
 
 export default defineConfig({
+  // Project site URL: https://junan300.github.io/nutermia-website/
+  base: "/nutermia-website/",
   plugins,
   resolve: {
     alias: {

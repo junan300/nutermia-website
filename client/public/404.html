@@ -6,7 +6,8 @@
     <script>
       // SPA redirect for GitHub Pages: preserves the path so the client-side
       // router (wouter) can handle it after index.html loads.
-      var pathSegmentsToKeep = 0;
+      // Keep "/nutermia-website" for GitHub project Pages (not a user/org root site).
+      var pathSegmentsToKeep = 1;
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
