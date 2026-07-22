@@ -4,14 +4,27 @@
  * editorial typography, mono labels.
  */
 import { Link } from "wouter";
-import { ArrowRight, MapPin, Clock, Languages, PlayCircle, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  MapPin,
+  Clock,
+  Languages,
+  PlayCircle,
+  ShieldCheck,
+} from "lucide-react";
 import { useI18n } from "@/contexts/I18nContext";
 import { TOUR_VIDEO_ID, NUTERMIA } from "@/lib/nutermia";
 import { Chromatogram } from "@/components/Chromatogram";
 
 export default function Tour() {
   const { t, s, lang } = useI18n();
-  const stops = ["tour.stops.1", "tour.stops.2", "tour.stops.3", "tour.stops.4", "tour.stops.5"] as const;
+  const stops = [
+    "tour.stops.1",
+    "tour.stops.2",
+    "tour.stops.3",
+    "tour.stops.4",
+    "tour.stops.5",
+  ] as const;
 
   return (
     <>
@@ -54,7 +67,8 @@ export default function Tour() {
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-[11px] tracking-widest text-white/75">
-                  <PlayCircle className="h-3.5 w-3.5" /> {s("home.tour.eyebrow")}
+                  <PlayCircle className="h-3.5 w-3.5" />{" "}
+                  {s("home.tour.eyebrow")}
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-[11px] tracking-widest text-white/75">
                   <ShieldCheck className="h-3.5 w-3.5 text-[color:var(--color-nutermia-green-soft)]" />{" "}
@@ -105,7 +119,11 @@ export default function Tour() {
                     <p className="font-mono text-[10px] tracking-widest text-white/50">
                       {s("home.tour.meta.lang")}
                     </p>
-                    <p className="text-sm">{lang === "es" ? "Español" : "Spanish (subtitles available)"}</p>
+                    <p className="text-sm">
+                      {lang === "es"
+                        ? "Español"
+                        : "Spanish (subtitles available)"}
+                    </p>
                   </div>
                 </div>
               </div>

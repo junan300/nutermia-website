@@ -19,7 +19,7 @@ import QuienesSomos from "./pages/QuienesSomos";
 import Contacto from "./pages/Contacto";
 import Tour from "./pages/Tour";
 
-/** Strip trailing slash from Vite base so wouter matches `/nutermia-website/...`. */
+/** Derive the wouter base from Vite's `base` ("" when deployed at the domain root). */
 const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function AppRouter() {

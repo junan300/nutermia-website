@@ -14,7 +14,7 @@ export default function Contacto() {
   const { t, s } = useI18n();
   const [submitting, setSubmitting] = useState(false);
 
-  const subjects = [1, 2, 3, 4, 5, 6].map((i) => s(`ct.s.${i}` as keyof Dict));
+  const subjects = [1, 2, 3, 4, 5, 6].map(i => s(`ct.s.${i}` as keyof Dict));
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -53,12 +53,14 @@ export default function Contacto() {
           <Chromatogram variant="divider" animate={false} />
         </div>
         <div className="container relative pt-16 pb-16 lg:pt-24 lg:pb-20">
-          <span className="section-tab">{s("ct.eyebrow")}</span>
+          <span className="section-tab nut-reveal">{s("ct.eyebrow")}</span>
           <div className="mt-5 grid lg:grid-cols-12 gap-10 items-end">
-            <h1 className="lg:col-span-8 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04]">
+            <h1 className="lg:col-span-8 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] nut-reveal nut-delay-1">
               {t("ct.title")}
             </h1>
-            <p className="lg:col-span-4 text-muted-foreground leading-relaxed">{s("ct.body")}</p>
+            <p className="lg:col-span-4 text-muted-foreground leading-relaxed nut-reveal nut-delay-2">
+              {s("ct.body")}
+            </p>
           </div>
         </div>
       </section>
@@ -68,7 +70,7 @@ export default function Contacto() {
         <div className="blob blob-blue h-72 w-72 top-20 -right-20 opacity-45" />
         <div className="container relative py-16 lg:py-20 grid lg:grid-cols-12 gap-10">
           {/* FORM */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 nut-reveal">
             <form
               onSubmit={handleSubmit}
               className="rounded-2xl border border-border bg-card/95 backdrop-blur p-6 lg:p-10 space-y-5"
@@ -112,7 +114,7 @@ export default function Contacto() {
                   defaultValue={subjects[0]}
                   className="mt-2 w-full rounded-md border border-input bg-background px-3.5 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-[color:var(--color-nutermia-green)]/40 focus:border-[color:var(--color-nutermia-green)]"
                 >
-                  {subjects.map((label) => (
+                  {subjects.map(label => (
                     <option key={label} value={label}>
                       {label}
                     </option>
@@ -134,7 +136,9 @@ export default function Contacto() {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-                <p className="text-xs text-muted-foreground max-w-sm">{s("ct.f.privacy")}</p>
+                <p className="text-xs text-muted-foreground max-w-sm">
+                  {s("ct.f.privacy")}
+                </p>
                 <button
                   type="submit"
                   disabled={submitting}
@@ -152,25 +156,31 @@ export default function Contacto() {
           </div>
 
           {/* INFO PANEL */}
-          <aside className="lg:col-span-5 space-y-5">
+          <aside className="lg:col-span-5 space-y-5 nut-reveal nut-delay-2">
             <div className="rounded-2xl bg-nut-ink text-[color:var(--color-nutermia-cream)] p-6 lg:p-8 relative overflow-hidden">
               <div className="blob blob-green h-48 w-48 -top-10 -right-10 opacity-40" />
               <span className="relative font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green-soft)]">
                 {s("ct.panel.title")}
               </span>
               <ul className="relative mt-5 space-y-4 text-sm">
-                {NUTERMIA.phones.map((p) => (
+                {NUTERMIA.phones.map(p => (
                   <li key={p} className="flex items-start gap-3">
                     <Phone className="h-4 w-4 mt-0.5 text-[color:var(--color-nutermia-green-soft)] shrink-0" />
-                    <a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-white">
+                    <a
+                      href={`tel:${p.replace(/\s/g, "")}`}
+                      className="hover:text-white"
+                    >
                       {p}
                     </a>
                   </li>
                 ))}
-                {NUTERMIA.emails.map((e) => (
+                {NUTERMIA.emails.map(e => (
                   <li key={e} className="flex items-start gap-3">
                     <Mail className="h-4 w-4 mt-0.5 text-[color:var(--color-nutermia-green-soft)] shrink-0" />
-                    <a href={`mailto:${e}`} className="hover:text-white break-all">
+                    <a
+                      href={`mailto:${e}`}
+                      className="hover:text-white break-all"
+                    >
                       {e}
                     </a>
                   </li>
@@ -190,8 +200,12 @@ export default function Contacto() {
               <span className="font-mono text-[11px] tracking-widest text-muted-foreground">
                 {s("ct.cert.tab")}
               </span>
-              <h3 className="mt-2 font-display text-2xl leading-tight">{NUTERMIA.iso}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s("ct.cert.body")}</p>
+              <h3 className="mt-2 font-display text-2xl leading-tight">
+                {NUTERMIA.iso}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {s("ct.cert.body")}
+              </p>
             </div>
           </aside>
         </div>

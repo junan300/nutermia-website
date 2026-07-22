@@ -71,7 +71,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-0.5">
-          {NAV_LINKS.map((link) => {
+          {NAV_LINKS.map(link => {
             const active =
               location === link.href ||
               (link.href !== "/" && location.startsWith(link.href));
@@ -119,7 +119,7 @@ export function SiteHeader() {
           <LangPill />
           <button
             aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen(v => !v)}
             className="inline-flex items-center justify-center rounded-md border border-border bg-card/60 p-2 text-foreground"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -130,7 +130,7 @@ export function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-1">
-            {NAV_LINKS.map((link) => {
+            {NAV_LINKS.map(link => {
               const active = location === link.href;
               return (
                 <Link

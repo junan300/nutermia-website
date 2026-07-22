@@ -33,8 +33,8 @@ export default function Productos() {
           <Chromatogram variant="divider" animate={false} />
         </div>
         <div className="container relative pt-16 pb-24 lg:pt-24 lg:pb-28">
-          <span className="section-tab">{s("pr.eyebrow")}</span>
-          <h1 className="mt-5 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] max-w-4xl">
+          <span className="section-tab nut-reveal">{s("pr.eyebrow")}</span>
+          <h1 className="mt-5 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] max-w-4xl nut-reveal nut-delay-1">
             {t("pr.title")}
           </h1>
         </div>
@@ -45,16 +45,22 @@ export default function Productos() {
         <div className="absolute inset-0 bg-grid-faint pointer-events-none opacity-70" />
         <div className="container relative py-20 lg:py-28 space-y-16">
           {GROUPS.map(({ g, itemCount }, gi) => (
-            <div key={g} className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div
+              key={g}
+              className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start"
+            >
+              {/* Reveal is applied inside the sticky wrapper so `transform` never interferes with `position: sticky`. */}
               <div className="lg:col-span-4 lg:sticky lg:top-28">
-                <span className="font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green)]">
-                  {String(gi + 1).padStart(2, "0")} · {s("pr.category")}
-                </span>
-                <h2 className="mt-2 font-display text-3xl md:text-4xl leading-tight">
-                  {s(`pr.g${g}.t` as keyof Dict)}
-                </h2>
+                <div className="nut-reveal">
+                  <span className="font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green)]">
+                    {String(gi + 1).padStart(2, "0")} · {s("pr.category")}
+                  </span>
+                  <h2 className="mt-2 font-display text-3xl md:text-4xl leading-tight">
+                    {s(`pr.g${g}.t` as keyof Dict)}
+                  </h2>
+                </div>
               </div>
-              <ul className="lg:col-span-8 divide-y divide-border border-t border-border">
+              <ul className="lg:col-span-8 divide-y divide-border border-t border-border nut-reveal nut-delay-1">
                 {Array.from({ length: itemCount }).map((_, idx) => {
                   const i = idx + 1;
                   return (
@@ -87,8 +93,10 @@ export default function Productos() {
         <div className="absolute inset-0 bg-grid-faint-on-dark pointer-events-none" />
         <div className="blob blob-blue h-80 w-80 -top-20 -left-24 opacity-55" />
         <div className="blob blob-green h-80 w-80 bottom-0 -right-24 opacity-55" />
-        <div className="container relative py-20 text-center max-w-2xl">
-          <h2 className="font-display text-3xl md:text-4xl leading-tight">{s("pr.cta.title")}</h2>
+        <div className="container relative py-20 text-center max-w-2xl nut-reveal">
+          <h2 className="font-display text-3xl md:text-4xl leading-tight">
+            {s("pr.cta.title")}
+          </h2>
           <p className="mt-3 text-white/70">{s("pr.cta.body")}</p>
           <Link
             href="/contacto"

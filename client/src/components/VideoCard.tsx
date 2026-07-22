@@ -14,12 +14,20 @@ interface VideoCardProps {
   index: number;
 }
 
-export function VideoCard({ videoId, title, subtitle, description, index }: VideoCardProps) {
+export function VideoCard({
+  videoId,
+  title,
+  subtitle,
+  description,
+  index,
+}: VideoCardProps) {
   const [playing, setPlaying] = useState(false);
   const thumb = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <article className="lift-card group rounded-xl bg-card border border-border overflow-hidden">
+    <article
+      className={`lift-card group rounded-xl bg-card border border-border overflow-hidden nut-reveal nut-delay-${(index % 4) + 1}`}
+    >
       <div className="relative aspect-video bg-[color:var(--color-nutermia-ink)] overflow-hidden">
         {playing ? (
           <iframe
@@ -58,8 +66,12 @@ export function VideoCard({ videoId, title, subtitle, description, index }: Vide
         <p className="font-mono text-[11px] tracking-widest text-[color:var(--color-nutermia-green)]">
           {subtitle}
         </p>
-        <h3 className="font-display text-2xl text-foreground leading-tight">{title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <h3 className="font-display text-2xl text-foreground leading-tight">
+          {title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       </div>
     </article>
   );

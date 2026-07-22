@@ -47,7 +47,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const toggle = useCallback(() => setLang(lang === "es" ? "en" : "es"), [lang, setLang]);
+  const toggle = useCallback(
+    () => setLang(lang === "es" ? "en" : "es"),
+    [lang, setLang]
+  );
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -56,7 +59,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const dict = dictionaries[lang];
 
   const t = useCallback(
-    (key: keyof Dict) => dict[key] ?? dictionaries.es[key] ?? (key as unknown as string),
+    (key: keyof Dict) =>
+      dict[key] ?? dictionaries.es[key] ?? (key as unknown as string),
     [dict]
   );
   const s = useCallback(
@@ -67,7 +71,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     [dict]
   );
 
-  const value = useMemo(() => ({ lang, setLang, toggle, t, s }), [lang, setLang, toggle, t, s]);
+  const value = useMemo(
+    () => ({ lang, setLang, toggle, t, s }),
+    [lang, setLang, toggle, t, s]
+  );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }

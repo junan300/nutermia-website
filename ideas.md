@@ -12,9 +12,9 @@
 - **Interaction Philosophy**: Interacciones discretas y precisas. Hover sobre tarjetas revela una línea fina verde abajo (subrayado de bisturí). Sin micro-animaciones decorativas: cada movimiento confirma una acción.
 - **Animation**: Entradas con fade + 8px de translateY a 180ms ease-out. Stagger de 60ms entre items. La curva de cromatograma del fondo del hero se dibuja con stroke-dashoffset en 1200ms al cargar. Sin parallax pesado.
 - **Typography System**: **Fraunces** (display serif, peso 600-700) para titulares — transmite rigor científico/editorial. **Inter Tight** (400/500/600) para cuerpo y UI. **JetBrains Mono** para datos técnicos, números de modelo y specs. Escala tipo 1.250 (Major Third).
-</text>
-<probability>0.06</probability>
-</response>
+  </text>
+  <probability>0.06</probability>
+  </response>
 
 <response>
 <text>
@@ -28,9 +28,9 @@
 - **Interaction Philosophy**: Cada interacción tiene un "glow" sutil que aparece y desaparece. Botones brillan ligeramente al hover. Sensación de instrumento encendido.
 - **Animation**: Fade + scale 0.97→1 en 220ms cubic-bezier(0.23, 1, 0.32, 1). Pulso muy lento (3s) en indicadores de "estado activo". Parallax leve en imágenes de hero (translateY 8px en scroll).
 - **Typography System**: **Space Grotesk** (500/700) para titulares — moderno, geométrico, técnico. **Inter** (400/500) para cuerpo. **JetBrains Mono** para badges y números. Escala 1.333 (Perfect Fourth).
-</text>
-<probability>0.04</probability>
-</response>
+  </text>
+  <probability>0.04</probability>
+  </response>
 
 <response>
 <text>
@@ -44,9 +44,9 @@
 - **Interaction Philosophy**: Las interacciones tienen presencia pero no son ruidosas. Los botones presionados hacen scale(0.97). Las tarjetas levantan 2px y revelan un borde verde lateral al hover. La curva del cromatograma se anima sutilmente al entrar en viewport.
 - **Animation**: Entradas con fade + translateY 16px en 240ms ease-out, stagger de 70ms. La curva SVG del cromatograma usa stroke-dashoffset para "dibujarse" en 1400ms al primer scroll. Hover de tarjeta: borde verde aparece en 160ms.
 - **Typography System**: **Instrument Serif** (regular/italic) para titulares grandes — sofisticación editorial con un toque humano. **Inter** (400/500/600) para cuerpo y nav. **JetBrains Mono** (400/500) para números técnicos, codes y stats. Escala 1.250 (Major Third). Italic se usa intencionalmente en palabras clave del eslogan ("excelencia", "estilo de vida").
-</text>
-<probability>0.08</probability>
-</response>
+  </text>
+  <probability>0.08</probability>
+  </response>
 
 ---
 
@@ -55,6 +55,7 @@
 **Elijo la Idea 3 — "Cromatograma Vivo" (Bio-Industrial Editorial)**.
 
 Razones:
+
 1. Toma directamente los colores del logo (azul + verde cromatograma) y los convierte en sistema, manteniendo coherencia de marca.
 2. El cromatograma como motivo gráfico recurrente es relevante semánticamente para una empresa de HPLC.
 3. Mezcla rigor farmacéutico (ISO, compliance, datos) con personalidad editorial moderna — evita el "WordPress genérico" que el spec menciona como problema.

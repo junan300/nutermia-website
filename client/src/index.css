@@ -10,9 +10,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -43,32 +43,32 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --color-nutermia-blue: oklch(0.42 0.105 245);       /* #13497F approx */
-  --color-nutermia-blue-deep: oklch(0.32 0.10 245);
-  --color-nutermia-green: oklch(0.62 0.13 155);       /* #2F9F6E approx */
+  --color-nutermia-blue: oklch(0.42 0.105 245); /* #13497F approx */
+  --color-nutermia-blue-deep: oklch(0.32 0.1 245);
+  --color-nutermia-green: oklch(0.62 0.13 155); /* #2F9F6E approx */
   --color-nutermia-green-soft: oklch(0.78 0.08 155);
-  --color-nutermia-cream: oklch(0.965 0.012 85);      /* #F6F4EE approx */
+  --color-nutermia-cream: oklch(0.965 0.012 85); /* #F6F4EE approx */
   --color-nutermia-cream-deep: oklch(0.93 0.015 85);
-  --color-nutermia-ink: oklch(0.20 0.025 245);        /* #0E1B2C approx */
-  --color-nutermia-coral: oklch(0.70 0.135 35);       /* #E07A57 approx */
+  --color-nutermia-ink: oklch(0.2 0.025 245); /* #0E1B2C approx */
+  --color-nutermia-coral: oklch(0.7 0.135 35); /* #E07A57 approx */
   --color-nutermia-gold: oklch(0.72 0.08 80);
 }
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.965 0.012 85);                /* cream */
-  --foreground: oklch(0.20 0.025 245);                /* ink */
+  --background: oklch(0.965 0.012 85); /* cream */
+  --foreground: oklch(0.2 0.025 245); /* ink */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.025 245);
+  --card-foreground: oklch(0.2 0.025 245);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.025 245);
-  --primary: oklch(0.42 0.105 245);                   /* nutermia blue */
+  --popover-foreground: oklch(0.2 0.025 245);
+  --primary: oklch(0.42 0.105 245); /* nutermia blue */
   --primary-foreground: oklch(0.98 0.005 85);
   --secondary: oklch(0.93 0.015 85);
-  --secondary-foreground: oklch(0.20 0.025 245);
+  --secondary-foreground: oklch(0.2 0.025 245);
   --muted: oklch(0.93 0.015 85);
   --muted-foreground: oklch(0.45 0.03 245);
-  --accent: oklch(0.62 0.13 155);                     /* nutermia green */
+  --accent: oklch(0.62 0.13 155); /* nutermia green */
   --accent-foreground: oklch(0.98 0.005 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
@@ -77,15 +77,15 @@
   --ring: oklch(0.62 0.13 155);
   --chart-1: oklch(0.42 0.105 245);
   --chart-2: oklch(0.62 0.13 155);
-  --chart-3: oklch(0.70 0.135 35);
-  --chart-4: oklch(0.32 0.10 245);
+  --chart-3: oklch(0.7 0.135 35);
+  --chart-4: oklch(0.32 0.1 245);
   --chart-5: oklch(0.78 0.08 155);
   --sidebar: oklch(0.98 0.005 85);
-  --sidebar-foreground: oklch(0.20 0.025 245);
+  --sidebar-foreground: oklch(0.2 0.025 245);
   --sidebar-primary: oklch(0.42 0.105 245);
   --sidebar-primary-foreground: oklch(0.98 0.005 85);
   --sidebar-accent: oklch(0.93 0.015 85);
-  --sidebar-accent-foreground: oklch(0.20 0.025 245);
+  --sidebar-accent-foreground: oklch(0.2 0.025 245);
   --sidebar-border: oklch(0.88 0.015 85);
   --sidebar-ring: oklch(0.62 0.13 155);
 
@@ -130,12 +130,22 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-  .flex { min-height: 0; min-width: 0; }
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
   @media (min-width: 640px) {
-    .container { padding-left: 2rem; padding-right: 2rem; }
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
   @media (min-width: 1024px) {
-    .container { padding-left: 2.5rem; padding-right: 2.5rem; max-width: 1280px; }
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1280px;
+    }
   }
 
   /* Section number tab (chromatogram editorial motif) */
@@ -161,7 +171,9 @@
   /* Hover-lift card with left green border on hover */
   .lift-card {
     position: relative;
-    transition: transform 240ms var(--ease-out-snappy), box-shadow 240ms var(--ease-out-snappy);
+    transition:
+      transform 240ms var(--ease-out-snappy),
+      box-shadow 240ms var(--ease-out-snappy);
   }
   .lift-card::before {
     content: "";
@@ -181,7 +193,9 @@
   }
 
   /* Animated press for buttons */
-  .btn-press:active { transform: scale(0.97); }
+  .btn-press:active {
+    transform: scale(0.97);
+  }
 
   /* Grain overlay (subtle texture) */
   .grain {
@@ -199,33 +213,72 @@
   }
 }
 
-/* Entry animation utilities */
-@keyframes nut-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Smooth in-page anchor scrolling (route changes still jump instantly via JS) */
+html {
+  scroll-behavior: smooth;
 }
+
+/* ── Entry animation utilities ──────────────────────────────────────────────
+   Scroll-triggered reveals: elements with `.nut-reveal` start hidden and
+   transition in when `useScrollReveal` (PageLayout) marks them `.nut-in`
+   as they enter the viewport. `.nut-delay-N` staggers siblings.
+*/
 .nut-reveal {
   opacity: 0;
-  animation: nut-fade-up 600ms var(--ease-out-snappy) forwards;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease-out-snappy),
+    transform 900ms var(--ease-out-snappy);
+  transition-delay: var(--nut-delay, 0ms);
+  will-change: opacity, transform;
 }
-.nut-delay-1 { animation-delay: 60ms; }
-.nut-delay-2 { animation-delay: 120ms; }
-.nut-delay-3 { animation-delay: 180ms; }
-.nut-delay-4 { animation-delay: 240ms; }
-.nut-delay-5 { animation-delay: 300ms; }
+.nut-reveal.nut-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nut-delay-1 {
+  --nut-delay: 80ms;
+}
+.nut-delay-2 {
+  --nut-delay: 160ms;
+}
+.nut-delay-3 {
+  --nut-delay: 240ms;
+}
+.nut-delay-4 {
+  --nut-delay: 320ms;
+}
+.nut-delay-5 {
+  --nut-delay: 400ms;
+}
 
 @keyframes nut-draw {
-  from { stroke-dashoffset: 1600; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 1600;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 .nut-draw {
   stroke-dasharray: 1600;
   stroke-dashoffset: 1600;
-  animation: nut-draw 1600ms var(--ease-out-snappy) forwards;
+  animation: nut-draw 1800ms var(--ease-out-snappy) 200ms forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nut-reveal, .nut-draw { animation: none; opacity: 1; stroke-dashoffset: 0; }
+  html {
+    scroll-behavior: auto;
+  }
+  .nut-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .nut-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }
 
 /* ── Atmospheric backgrounds (v2) ───────────────────────────────────────────
@@ -235,42 +288,91 @@
 .bg-nut-mesh-light {
   background-color: var(--color-nutermia-cream);
   background-image:
-    radial-gradient(ellipse 60% 50% at 12% 18%, oklch(0.78 0.08 245 / 0.22), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 88% 22%, oklch(0.85 0.07 155 / 0.22), transparent 65%),
-    radial-gradient(ellipse 70% 55% at 50% 95%, oklch(0.74 0.06 245 / 0.18), transparent 70%),
+    radial-gradient(
+      ellipse 60% 50% at 12% 18%,
+      oklch(0.78 0.08 245 / 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 88% 22%,
+      oklch(0.85 0.07 155 / 0.22),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 70% 55% at 50% 95%,
+      oklch(0.74 0.06 245 / 0.18),
+      transparent 70%
+    ),
     linear-gradient(180deg, oklch(0.985 0.005 85) 0%, oklch(0.95 0.012 85) 100%);
 }
 .bg-nut-mesh-cool {
   background-color: oklch(0.97 0.008 220);
   background-image:
-    radial-gradient(ellipse 50% 40% at 18% 32%, oklch(0.80 0.10 245 / 0.32), transparent 65%),
-    radial-gradient(ellipse 45% 38% at 82% 70%, oklch(0.82 0.10 155 / 0.30), transparent 65%),
+    radial-gradient(
+      ellipse 50% 40% at 18% 32%,
+      oklch(0.8 0.1 245 / 0.32),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 45% 38% at 82% 70%,
+      oklch(0.82 0.1 155 / 0.3),
+      transparent 65%
+    ),
     linear-gradient(180deg, oklch(0.98 0.006 220) 0%, oklch(0.93 0.01 220) 100%);
 }
 .bg-nut-ink {
   background-color: var(--color-nutermia-ink);
   background-image:
-    radial-gradient(ellipse 60% 50% at 15% 18%, oklch(0.42 0.105 245 / 0.50), transparent 65%),
-    radial-gradient(ellipse 55% 45% at 88% 78%, oklch(0.55 0.11 155 / 0.32), transparent 70%),
-    linear-gradient(180deg, oklch(0.20 0.025 245) 0%, oklch(0.16 0.022 245) 100%);
+    radial-gradient(
+      ellipse 60% 50% at 15% 18%,
+      oklch(0.42 0.105 245 / 0.5),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 88% 78%,
+      oklch(0.55 0.11 155 / 0.32),
+      transparent 70%
+    ),
+    linear-gradient(180deg, oklch(0.2 0.025 245) 0%, oklch(0.16 0.022 245) 100%);
 }
 .bg-nut-ink-soft {
   background-color: oklch(0.27 0.03 245);
   background-image:
-    radial-gradient(ellipse 50% 40% at 20% 20%, oklch(0.50 0.12 245 / 0.45), transparent 65%),
-    radial-gradient(ellipse 55% 50% at 85% 80%, oklch(0.60 0.11 155 / 0.30), transparent 70%);
+    radial-gradient(
+      ellipse 50% 40% at 20% 20%,
+      oklch(0.5 0.12 245 / 0.45),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 85% 80%,
+      oklch(0.6 0.11 155 / 0.3),
+      transparent 70%
+    );
 }
 .bg-nut-band-split {
   /* Split light↔dark band for transitional sections */
-  background:
-    linear-gradient(180deg, var(--color-nutermia-cream) 0%, var(--color-nutermia-cream) 55%, var(--color-nutermia-ink) 55%, oklch(0.18 0.025 245) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-nutermia-cream) 0%,
+    var(--color-nutermia-cream) 55%,
+    var(--color-nutermia-ink) 55%,
+    oklch(0.18 0.025 245) 100%
+  );
 }
 
 /* Faint engineering grid overlay */
 .bg-grid-faint {
   background-image:
-    linear-gradient(to right, oklch(0.20 0.025 245 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.20 0.025 245 / 0.045) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      oklch(0.2 0.025 245 / 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      oklch(0.2 0.025 245 / 0.045) 1px,
+      transparent 1px
+    );
   background-size: 56px 56px;
 }
 .bg-grid-faint-on-dark {
@@ -288,9 +390,15 @@
   pointer-events: none;
   opacity: 0.55;
 }
-.blob-blue { background: oklch(0.62 0.14 245 / 0.45); }
-.blob-green { background: oklch(0.66 0.13 155 / 0.40); }
-.blob-coral { background: oklch(0.74 0.13 35 / 0.30); }
+.blob-blue {
+  background: oklch(0.62 0.14 245 / 0.45);
+}
+.blob-green {
+  background: oklch(0.66 0.13 155 / 0.4);
+}
+.blob-coral {
+  background: oklch(0.74 0.13 35 / 0.3);
+}
 
 /* Lang switch pill */
 .lang-pill {
@@ -309,7 +417,9 @@
   padding: 4px 10px;
   border-radius: 999px;
   color: var(--color-muted-foreground);
-  transition: color 180ms var(--ease-out-snappy), background-color 180ms var(--ease-out-snappy);
+  transition:
+    color 180ms var(--ease-out-snappy),
+    background-color 180ms var(--ease-out-snappy);
 }
 .lang-pill button[data-active="true"] {
   background: var(--color-nutermia-blue);
