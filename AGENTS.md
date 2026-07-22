@@ -30,10 +30,10 @@ GitHub Actions (`.github/workflows/ci.yml`) runs type check, format check, and b
 
 ### Gotchas
 
-- **pnpm 10 build scripts**: After `pnpm install`, pnpm 10 may warn about ignored build scripts for `@tailwindcss/oxide` and `esbuild`. The Vite dev server still starts and works correctly despite this warning.
+- **pnpm 11**: The project pins `pnpm@11.16.0` via `packageManager` (Hostinger's build environment runs pnpm 11, which requires Node 22+). pnpm settings live in `pnpm-workspace.yaml` — pnpm 11 no longer reads the `pnpm` field in `package.json`. Build scripts for `@tailwindcss/oxide` and `esbuild` are explicitly allowed there via `allowBuilds`.
 - **`pnpm format` writes files**: The `format` script runs `prettier --write .`, which reformats files in place. To check formatting without modifying files, run `npx prettier --check .` instead.
 - **Images**: Place image assets in `client/public/images/`. Reference them via `import.meta.env.BASE_URL` (see `ASSETS` in `client/src/lib/nutermia.ts`).
 - **Base path**: The site is served from the domain root; `vite.config.ts` sets `base: "/"`. If the site ever moves under a subpath, update `base` — wouter and asset paths follow it automatically.
 - **Scroll animations**: Elements with the `nut-reveal` class are animated in by `useScrollReveal` (wired in `PageLayout`) via IntersectionObserver. `nut-delay-1..5` stagger siblings; `prefers-reduced-motion` disables the effect.
 - **No tests written**: `vitest` is a dev dependency but no test files exist yet. `pnpm check` (TypeScript) and `npx prettier --check .` are the primary lint/check commands.
-- **Patched dependency**: `wouter@3.7.1` has a patch in `patches/` applied automatically by pnpm.
+- **Patched dependency**: `wouter@3.7.1` has a patch in `patches/`, registered under `patchedDependencies` in `pnpm-workspace.yaml` and applied automatically by pnpm.
