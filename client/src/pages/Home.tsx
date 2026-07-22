@@ -404,17 +404,42 @@ export default function Home() {
               {s("home.brands.body")}
             </p>
           </div>
-          <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {BRANDS.map((b, i) => (
-              <li
-                key={b}
-                className={`lift-card flex items-center justify-center rounded-md border border-border bg-white py-5 px-3 text-center nut-reveal nut-delay-${(i % 4) + 1}`}
-              >
-                <span className="font-display text-lg text-foreground">
-                  {b}
-                </span>
-              </li>
-            ))}
+          <ul className="brand-grid grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-9 gap-3">
+            {BRANDS.map((b, i) => {
+              const cardClass =
+                "brand-card relative flex h-full items-center justify-center rounded-md border border-border bg-white py-5 px-3 text-center";
+              const content = (
+                <>
+                  <span className="font-display text-lg text-foreground">
+                    {b.name}
+                  </span>
+                  {"isNew" in b && b.isNew && (
+                    <span className="brand-new-badge">
+                      {s("home.brands.new")}
+                    </span>
+                  )}
+                </>
+              );
+              return (
+                <li
+                  key={b.name}
+                  className={`nut-reveal nut-delay-${(i % 4) + 1}`}
+                >
+                  {"href" in b && b.href ? (
+                    <a
+                      href={b.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cardClass}
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div className={cardClass}>{content}</div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

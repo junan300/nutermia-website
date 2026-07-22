@@ -71,7 +71,7 @@ const es = {
   "home.hero.stat1.l": "Años",
   "home.hero.stat2.n": "ISO",
   "home.hero.stat2.l": "9001:2015",
-  "home.hero.stat3.n": "7+",
+  "home.hero.stat3.n": "8+",
   "home.hero.stat3.l": "Marcas",
 
   // ── Home · Capabilities band ────────────────────────────────────────────────
@@ -199,6 +199,7 @@ const es = {
     "Trabajamos con los líderes globales de la instrumentación analítica.",
   "home.brands.body":
     "Equipos nuevos, repuestos originales y consumibles cromatográficos de los principales fabricantes del mundo.",
+  "home.brands.new": "Nueva alianza 2026",
 
   // ── Home · CTA ──────────────────────────────────────────────────────────────
   "home.cta.badge": "CERTIFICACIÓN ISO 9001:2015",
@@ -565,7 +566,7 @@ const en = {
   "home.hero.stat1.l": "Years",
   "home.hero.stat2.n": "ISO",
   "home.hero.stat2.l": "9001:2015",
-  "home.hero.stat3.n": "7+",
+  "home.hero.stat3.n": "8+",
   "home.hero.stat3.l": "Brands",
 
   // Home · Capabilities
@@ -692,6 +693,7 @@ const en = {
     "We work with the global leaders of analytical instrumentation.",
   "home.brands.body":
     "New equipment, OEM spare parts, and chromatography consumables from the world's top manufacturers.",
+  "home.brands.new": "New 2026 partnership",
 
   // Home · CTA
   "home.cta.badge": "ISO 9001:2015 CERTIFICATION",

@@ -104,11 +104,23 @@ export function SiteFooter() {
             {s("footer.brands")}
           </span>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {BRANDS.map(b => (
-              <span key={b} className="text-xs text-white/70">
-                {b}
-              </span>
-            ))}
+            {BRANDS.map(b =>
+              "href" in b && b.href ? (
+                <a
+                  key={b.name}
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-white/70 underline-offset-2 hover:text-white hover:underline transition-colors"
+                >
+                  {b.name}
+                </a>
+              ) : (
+                <span key={b.name} className="text-xs text-white/70">
+                  {b.name}
+                </span>
+              )
+            )}
           </div>
         </div>
 
