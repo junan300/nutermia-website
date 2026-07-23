@@ -26,7 +26,19 @@ Deployed on **Hostinger** (Web Apps / managed React-Vite hosting). Hostinger con
 - **Node.js version**: 22.x (pinned via the `engines` field in `package.json`)
 - **SPA fallback**: `client/public/.htaccess` is copied into `dist/` and rewrites unknown paths to `index.html` (Apache/LiteSpeed), so wouter deep links work. The same `dist/` output can also be uploaded manually to `public_html` on classic Hostinger shared hosting.
 
-GitHub Actions (`.github/workflows/ci.yml`) runs type check, format check, and build on push/PR — it does not deploy.
+GitHub Actions (`.github/workflows/ci.yml`) runs type check, format check, and build on push/PR — it does not deploy to Hostinger.
+
+### Preview loop (no local clone needed)
+
+Production (Hostinger) only updates when a PR is **merged into `main`**. To review UI changes before that:
+
+1. Open / push a PR — CI runs as usual.
+2. **PR Preview** builds the site with `VITE_BASE=/nutermia-website/` and comments the staging URL on the PR.
+3. **Publish Staging** (must already be on `main`) deploys that build to GitHub Pages:  
+   https://junan300.github.io/nutermia-website/
+4. Open the link on any phone or laptop (no git). When happy, merge the PR → Hostinger auto-redeploys production.
+
+Staging is shared (latest successful PR build wins). It never writes to Hostinger.
 
 ### Gotchas
 

@@ -1,0 +1,48 @@
+# Publishes the latest successful PR Preview build to GitHub Pages.
+# Runs in the context of `main` so it satisfies the github-pages environment
+# branch policy. Hostinger production is unaffected.
+#
+# Note: this workflow file must exist on `main` before it can run (GitHub
+# requirement for workflow_run). Merging the PR that adds it enables the loop
+# for every later PR.
+name: Publish Staging
+
+on:
+  workflow_run:
+    workflows: ["PR Preview"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages-staging
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download staging artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: staging-site
+          path: dist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
