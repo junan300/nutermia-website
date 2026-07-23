@@ -39,15 +39,21 @@ export const VIDEOS = [
 /** Long-form company tour video (full walk-through). */
 export const TOUR_VIDEO_ID = "RUYnMYmLT3o";
 
+/** Represented brands. `href` renders the card as an external link; `isNew` shows the "new partnership" badge on hover. */
 export const BRANDS = [
-  "Agilent",
-  "Shimadzu",
-  "Merck Hitachi",
-  "Hanon Instruments",
-  "Welch Materials",
-  "Dr. Maisch",
-  "SMT",
-  "Brookfield",
+  { name: "Agilent" },
+  { name: "Shimadzu" },
+  { name: "Merck Hitachi" },
+  { name: "Hanon Instruments" },
+  { name: "Welch Materials" },
+  { name: "Dr. Maisch" },
+  { name: "SMT" },
+  { name: "Brookfield" },
+  {
+    name: "Bareiss",
+    href: "https://www.bareiss-testing.com/pharmaceutical-testing-equipment/",
+    isNew: true,
+  },
 ] as const;
 
 /** Routes for navigation. Labels are looked up via i18n keys. */
