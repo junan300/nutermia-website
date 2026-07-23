@@ -28,6 +28,22 @@ Deployed on **Hostinger** (Web Apps / managed React-Vite hosting). Hostinger con
 
 GitHub Actions (`.github/workflows/ci.yml`) runs type check, format check, and build on push/PR — it does not deploy.
 
+### Review previews — REQUIRED before merging visual changes
+
+The editor (site owner) reviews changes in a browser only — they do not use git or run the project locally. Whenever you finish changes that the editor should see (any visual/content change), you MUST deploy a throwaway preview and give them the link:
+
+```bash
+pnpm build
+npx netlify-cli deploy --dir=dist --allow-anonymous
+```
+
+- This uploads `dist/` anonymously to a random one-off `*.netlify.app` URL (Netlify Drop). The output box shows the **Site URL** and a **Password** (e.g. `My-Drop-Site`) — include both prominently in your final summary (and in the PR description).
+- Deploy as the **last step** of your work and share the link right away: unclaimed anonymous deploys expire quickly (Netlify warns they must be claimed within ~60 minutes), so the editor should open the link promptly. If it has expired, just re-run the two commands to get a fresh link.
+- The preview is temporary and disposable — it never touches Hostinger production. Production only updates when the PR is merged into `main` (Hostinger auto-redeploys).
+- The site builds with `base: "/"`, which works as-is on the Netlify preview domain — no config changes needed.
+- The CLI writes a local `.netlify/` state folder; it is gitignored (and prettier-ignored) — never commit it.
+- Review flow for the editor: open the Netlify link → check the changes → merge the PR on github.com when happy → Hostinger goes live automatically.
+
 ### Gotchas
 
 - **pnpm 11**: The project pins `pnpm@11.16.0` via `packageManager` (Hostinger's build environment runs pnpm 11, which requires Node 22+). pnpm settings live in `pnpm-workspace.yaml` — pnpm 11 no longer reads the `pnpm` field in `package.json`. Build scripts for `@tailwindcss/oxide` and `esbuild` are explicitly allowed there via `allowBuilds`.
