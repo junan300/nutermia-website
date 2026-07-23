@@ -1,5 +1,6 @@
 dist
 node_modules
+.netlify
 .git
 pnpm-lock.yaml
 *.min.js
