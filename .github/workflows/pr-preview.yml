@@ -57,8 +57,6 @@ jobs:
               "No git clone needed — open it on your phone or laptop.",
               "",
               "Production on **Hostinger** only changes when this PR is **merged into `main`**.",
-              "",
-              "_Scroll to **Marcas representadas** and hover the brand squares (try Bareiss for the new badge)._",
             ].join("\n");
 
             const { data: comments } = await github.rest.issues.listComments({

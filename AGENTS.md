@@ -28,21 +28,11 @@ Deployed on **Hostinger** (Web Apps / managed React-Vite hosting). Hostinger con
 
 GitHub Actions (`.github/workflows/ci.yml`) runs type check, format check, and build on push/PR — it does not deploy to Hostinger.
 
-### Preview loop (no local clone needed)
+### Editor review previews — REQUIRED before merging visual changes
 
-Production (Hostinger) only updates when a PR is **merged into `main`**. To review UI changes before that:
+The editor (site owner) reviews changes in a browser only — they do not use git or run the project locally. Production (Hostinger) only updates when a PR is **merged into `main`**. Two preview mechanisms exist; use the Netlify one yourself, the Pages one runs automatically.
 
-1. Open / push a PR — CI runs as usual.
-2. **PR Preview** builds the site with `VITE_BASE=/nutermia-website/` and comments the staging URL on the PR.
-3. **Publish Staging** (must already be on `main`) deploys that build to GitHub Pages:  
-   https://junan300.github.io/nutermia-website/
-4. Open the link on any phone or laptop (no git). When happy, merge the PR → Hostinger auto-redeploys production.
-
-Staging is shared (latest successful PR build wins). It never writes to Hostinger.
-
-### Review previews — REQUIRED before merging visual changes
-
-The editor (site owner) reviews changes in a browser only — they do not use git or run the project locally. Whenever you finish changes that the editor should see (any visual/content change), you MUST deploy a throwaway preview and give them the link:
+**1. Netlify Drop link (you MUST provide this).** Whenever you finish changes that the editor should see (any visual/content change), deploy a throwaway preview and give them the link:
 
 ```bash
 pnpm build
@@ -51,10 +41,13 @@ npx netlify-cli deploy --dir=dist --allow-anonymous
 
 - This uploads `dist/` anonymously to a random one-off `*.netlify.app` URL (Netlify Drop). The output box shows the **Site URL** and a **Password** (e.g. `My-Drop-Site`) — include both prominently in your final summary (and in the PR description).
 - Deploy as the **last step** of your work and share the link right away: unclaimed anonymous deploys expire quickly (Netlify warns they must be claimed within ~60 minutes), so the editor should open the link promptly. If it has expired, just re-run the two commands to get a fresh link.
-- The preview is temporary and disposable — it never touches Hostinger production. Production only updates when the PR is merged into `main` (Hostinger auto-redeploys).
-- The site builds with `base: "/"`, which works as-is on the Netlify preview domain — no config changes needed.
+- The preview is temporary and disposable — it never touches Hostinger production.
+- The default `base: "/"` works as-is on the Netlify preview domain — no config changes needed.
 - The CLI writes a local `.netlify/` state folder; it is gitignored (and prettier-ignored) — never commit it.
-- Review flow for the editor: open the Netlify link → check the changes → merge the PR on github.com when happy → Hostinger goes live automatically.
+
+**2. GitHub Pages staging (automatic on every PR).** `.github/workflows/pr-preview.yml` builds each PR with `VITE_BASE=/nutermia-website/` and comments the staging URL on the PR; `.github/workflows/publish-staging.yml` (a `workflow_run` follow-up that must live on `main`, which it does) then deploys it to https://junan300.github.io/nutermia-website/. Staging is shared — the latest successful PR build wins — and never writes to Hostinger. `vite.config.ts` reads `VITE_BASE` for this; Hostinger builds keep `base: "/"`.
+
+Review flow for the editor: open a preview link → check the changes → merge the PR on github.com when happy → Hostinger goes live automatically.
 
 ### Gotchas
 
